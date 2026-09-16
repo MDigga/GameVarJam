@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bfworhvvjwvjd"]
+
+[ext_resource type="Texture2D" uid="uid://b8vvk08784aid" path="res://assets/images/background/forest_background.png" id="1_q3ami"]
+[ext_resource type="Texture2D" uid="uid://dovib5dxvhtms" path="res://assets/images/things/zariel_Boss.png" id="2_dg228"]
+[ext_resource type="Texture2D" uid="uid://babtlwjuf2mj6" path="res://assets/images/player/David_idle_3.png" id="3_dg228"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3ami"]
+atlas = ExtResource("2_dg228")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg228"]
+atlas = ExtResource("2_dg228")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv4lo"]
+atlas = ExtResource("2_dg228")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snas4"]
+atlas = ExtResource("2_dg228")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqisg"]
+atlas = ExtResource("2_dg228")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3ami")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg228")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv4lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snas4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqisg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm72g"]
+atlas = ExtResource("3_dg228")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pro0j"]
+atlas = ExtResource("3_dg228")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1wjk"]
+atlas = ExtResource("3_dg228")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjxgb"]
+atlas = ExtResource("3_dg228")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryp8b"]
+atlas = ExtResource("3_dg228")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvr6"]
+atlas = ExtResource("3_dg228")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm72g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pro0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1wjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjxgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryp8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vvr6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Battle" type="Control" unique_id=258725910]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1016676568]
+layout_mode = 0
+offset_right = 1180.0
+offset_bottom = 590.0
+texture = ExtResource("1_q3ami")
+
+[node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1018460420]
+position = Vector2(982.00006, 439.00003)
+scale = Vector2(2.9650002, 2.9650002)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Player" type="AnimatedSprite2D" parent="." unique_id=468563466]
+position = Vector2(224, 474)
+scale = Vector2(5.234375, 5.234375)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+autoplay = "default"
