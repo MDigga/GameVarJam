@@ -312,12 +312,20 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elax6"]
+size = Vector2(40, 42)
+
 [node name="Player" type="CharacterBody2D" unique_id=993795172]
 position = Vector2(3, 0)
+collision_mask = 2
 script = ExtResource("1_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=753512168]
-position = Vector2(-1.5258789e-05, -6.9999847)
+position = Vector2(5, -6)
 scale = Vector2(2, 1.835)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle_up"
+
+[node name="MCHitbox" type="CollisionShape2D" parent="." unique_id=1455293980]
+position = Vector2(4, -2)
+shape = SubResource("RectangleShape2D_elax6")
