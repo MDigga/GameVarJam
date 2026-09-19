@@ -7,10 +7,10 @@
 position = Vector2(-472, -332)
 
 [node name="LevelRoot" parent="." unique_id=1498280060 instance=ExtResource("1_0wfyh")]
-position = Vector2(234, 95)
+position = Vector2(199, 156)
 
 [node name="Player" parent="." unique_id=993795172 instance=ExtResource("1_o5qli")]
-position = Vector2(606, 273)
+position = Vector2(540, 156)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=202430072]
 position = Vector2(4, -7)

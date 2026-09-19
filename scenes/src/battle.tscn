@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://bfworhvvjwvjd"]
 
-[ext_resource type="Script" uid="uid://bk2i2a2hwb0m" path="res://scripts/battle.gd" id="1_lqisg"]
-[ext_resource type="Texture2D" uid="uid://dkgmqss3fj6cb" path="res://assets/images/background/white.png" id="1_snas4"]
+[ext_resource type="Texture2D" uid="uid://b8vvk08784aid" path="res://assets/images/background/forest_background.png" id="1_q3ami"]
 [ext_resource type="Texture2D" uid="uid://dovib5dxvhtms" path="res://assets/images/things/zariel_Boss.png" id="2_dg228"]
 [ext_resource type="Texture2D" uid="uid://babtlwjuf2mj6" path="res://assets/images/player/David_idle_3.png" id="3_dg228"]
-[ext_resource type="FontFile" uid="uid://cgdoluxypsy5" path="res://assets/fonts/04B_03__.TTF" id="3_tv4lo"]
-[ext_resource type="Texture2D" uid="uid://sbfwpbtobiua" path="res://assets/images/things/attacks.png" id="5_lqisg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3ami"]
 atlas = ExtResource("2_dg228")
@@ -49,12 +46,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
-bg_color = Color(0.5227242, 0.5227243, 0.5227241, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
-bg_color = Color(1, 0.21176471, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lm72g"]
 atlas = ExtResource("3_dg228")
@@ -106,57 +97,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sltpd"]
-atlas = ExtResource("5_lqisg")
-region = Rect2(256, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0uq2"]
-atlas = ExtResource("5_lqisg")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_urqbx"]
-atlas = ExtResource("5_lqisg")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8i4d0"]
-atlas = ExtResource("5_lqisg")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1oqyg"]
-atlas = ExtResource("5_lqisg")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sltpd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r0uq2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_urqbx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8i4d0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1oqyg")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 8.0
-}]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57qmd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0u6y"]
-bg_color = Color(0.5401144, 0.0022592575, 0.7882845, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snas4"]
-bg_color = Color(1, 1, 1, 1)
-
 [node name="Battle" type="Control" unique_id=258725910]
 layout_mode = 3
 anchors_preset = 15
@@ -164,173 +104,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lqisg")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1016676568]
 layout_mode = 0
 offset_right = 1180.0
 offset_bottom = 590.0
-texture = ExtResource("1_snas4")
+texture = ExtResource("1_q3ami")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1888269379]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 651.0
-offset_top = 69.0
-offset_right = -150.19995
-offset_bottom = -193.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Enemy" type="AnimatedSprite2D" parent="VBoxContainer" unique_id=1018460420]
-position = Vector2(202, 171)
+[node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1018460420]
+position = Vector2(982.00006, 439.00003)
 scale = Vector2(2.9650002, 2.9650002)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
 
-[node name="EnemyHealthBar" type="ProgressBar" parent="VBoxContainer" unique_id=1462514568]
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
-theme_override_styles/background = SubResource("StyleBoxFlat_g4v7s")
-theme_override_styles/fill = SubResource("StyleBoxFlat_yf5fn")
-value = 50.0
-
-[node name="EnemyHP" type="Label" parent="VBoxContainer/EnemyHealthBar" unique_id=2142182078]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("3_tv4lo")
-theme_override_font_sizes/font_size = 18
-text = "HP: 25 / 50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerPanel" type="Panel" parent="." unique_id=1161888566]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -166.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Player" type="AnimatedSprite2D" parent="PlayerPanel" unique_id=468563466]
-position = Vector2(300, -174)
-scale = Vector2(3.170898, 3.170898)
+[node name="Player" type="AnimatedSprite2D" parent="." unique_id=468563466]
+position = Vector2(224, 474)
+scale = Vector2(5.234375, 5.234375)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-
-[node name="AttackAnimation" type="AnimatedSprite2D" parent="PlayerPanel/Player" unique_id=400142042]
-visible = false
-position = Vector2(170.9295, -1.8922086)
-sprite_frames = SubResource("SpriteFrames_57qmd")
-frame = 4
-frame_progress = 1.0
-
-[node name="PlayerHealthBar" type="ProgressBar" parent="PlayerPanel" unique_id=122695046]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24000001
-anchor_top = 0.28300002
-anchor_right = 0.527
-anchor_bottom = 0.446
-offset_left = 192.31998
-offset_top = -39.978004
-offset_right = 363.086
-offset_bottom = -40.036003
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
-theme_override_styles/background = SubResource("StyleBoxFlat_57qmd")
-theme_override_styles/fill = SubResource("StyleBoxFlat_d0u6y")
-value = 60.0
-
-[node name="PlayerHP" type="Label" parent="PlayerPanel/PlayerHealthBar" unique_id=240898310]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("3_tv4lo")
-theme_override_font_sizes/font_size = 18
-text = "HP: 6 / 10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AttackButton" type="Button" parent="PlayerPanel" unique_id=1542609947]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.601
-anchor_top = 0.066
-anchor_right = 0.698
-anchor_bottom = 0.289
-offset_left = -233.38202
-offset_top = 32.044
-offset_right = -128.03601
-offset_bottom = 32.026
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tv4lo")
-theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
-text = "ATTACK"
-
-[node name="ItemButton" type="Button" parent="PlayerPanel" unique_id=985338756]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.754
-anchor_top = 0.066
-anchor_right = 0.851
-anchor_bottom = 0.289
-offset_left = -128.22803
-offset_top = 32.044
-offset_right = -18.882019
-offset_bottom = 32.026
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tv4lo")
-theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
-text = "ITEM"
-
-[node name="RunButton" type="Button" parent="PlayerPanel" unique_id=1492126692]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.754
-anchor_top = 0.45200002
-anchor_right = 0.851
-anchor_bottom = 0.675
-offset_left = -128.22803
-offset_top = 31.967995
-offset_right = -18.882019
-offset_bottom = 31.949997
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tv4lo")
-theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
-text = "RUN"
-
-[node name="ReverseButton" type="Button" parent="PlayerPanel" unique_id=1085513249]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.601
-anchor_top = 0.45200002
-anchor_right = 0.698
-anchor_bottom = 0.675
-offset_left = -232.38202
-offset_top = 31.967995
-offset_right = -128.03601
-offset_bottom = 31.949997
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tv4lo")
-theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
-text = "REVERSE"
