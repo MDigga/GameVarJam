@@ -2,53 +2,53 @@
 
 [ext_resource type="Script" uid="uid://bk2i2a2hwb0m" path="res://scripts/battle.gd" id="1_lqisg"]
 [ext_resource type="Texture2D" uid="uid://dkgmqss3fj6cb" path="res://assets/images/background/white.png" id="1_snas4"]
-[ext_resource type="Texture2D" uid="uid://dovib5dxvhtms" path="res://assets/images/things/zariel_Boss.png" id="2_dg228"]
 [ext_resource type="Texture2D" uid="uid://babtlwjuf2mj6" path="res://assets/images/player/David_idle_3.png" id="3_dg228"]
+[ext_resource type="Texture2D" uid="uid://dovib5dxvhtms" path="res://assets/images/things/zariel_Boss.png" id="3_lm72g"]
 [ext_resource type="FontFile" uid="uid://cgdoluxypsy5" path="res://assets/fonts/04B_03__.TTF" id="3_tv4lo"]
 [ext_resource type="Texture2D" uid="uid://sbfwpbtobiua" path="res://assets/images/things/attacks.png" id="5_lqisg"]
 [ext_resource type="Texture2D" uid="uid://deyhuv1si0xhe" path="res://assets/images/player/david_profile_1.png" id="7_lm72g"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q3ami"]
-atlas = ExtResource("2_dg228")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vrki"]
+atlas = ExtResource("3_lm72g")
 region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dg228"]
-atlas = ExtResource("2_dg228")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mmua"]
+atlas = ExtResource("3_lm72g")
 region = Rect2(100, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tv4lo"]
-atlas = ExtResource("2_dg228")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t63e"]
+atlas = ExtResource("3_lm72g")
 region = Rect2(200, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_snas4"]
-atlas = ExtResource("2_dg228")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hk7e"]
+atlas = ExtResource("3_lm72g")
 region = Rect2(300, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lqisg"]
-atlas = ExtResource("2_dg228")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d6ng"]
+atlas = ExtResource("3_lm72g")
 region = Rect2(400, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q3ami")
+"texture": SubResource("AtlasTexture_2vrki")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dg228")
+"texture": SubResource("AtlasTexture_0mmua")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tv4lo")
+"texture": SubResource("AtlasTexture_0t63e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_snas4")
+"texture": SubResource("AtlasTexture_7hk7e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lqisg")
+"texture": SubResource("AtlasTexture_2d6ng")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
@@ -196,6 +196,7 @@ position = Vector2(202, 171)
 scale = Vector2(2.9650002, 2.9650002)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
+frame_progress = 0.93779355
 
 [node name="EnemyHealthBar" type="ProgressBar" parent="VBoxContainer" unique_id=1462514568]
 custom_minimum_size = Vector2(0, 24)
@@ -241,7 +242,7 @@ autoplay = "default"
 [node name="AttackAnimation" type="AnimatedSprite2D" parent="PlayerPanel/Player" unique_id=400142042]
 position = Vector2(170.9295, -1.8922086)
 sprite_frames = SubResource("SpriteFrames_57qmd")
-frame = 5
+frame = 6
 frame_progress = 1.0
 
 [node name="PlayerHealthBar" type="ProgressBar" parent="PlayerPanel" unique_id=122695046]
@@ -281,14 +282,14 @@ vertical_alignment = 1
 [node name="AttackButton" type="Button" parent="PlayerPanel" unique_id=1542609947]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.601
-anchor_top = 0.066
-anchor_right = 0.698
-anchor_bottom = 0.289
-offset_left = -288.38202
-offset_top = 35.044
-offset_right = -183.03601
-offset_bottom = 35.026
+anchor_left = 0.35700002
+anchor_top = 0.289
+anchor_right = 0.54300004
+anchor_bottom = 0.5
+offset_left = 0.025970459
+offset_top = -2.420002
+offset_right = 0.1739502
+offset_bottom = -0.42199707
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_tv4lo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
@@ -297,14 +298,14 @@ text = "ATTACK"
 [node name="ItemButton" type="Button" parent="PlayerPanel" unique_id=985338756]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.754
-anchor_top = 0.066
-anchor_right = 0.851
-anchor_bottom = 0.289
-offset_left = -183.22803
-offset_top = 35.044
-offset_right = -73.88202
-offset_bottom = 35.026
+anchor_left = 0.59900004
+anchor_top = 0.275
+anchor_right = 0.78800005
+anchor_bottom = 0.497
+offset_left = -0.018066406
+offset_top = -0.06800079
+offset_right = 0.58392334
+offset_bottom = 0.08200073
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_tv4lo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
@@ -313,14 +314,14 @@ text = "ITEM"
 [node name="RunButton" type="Button" parent="PlayerPanel" unique_id=1492126692]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.754
-anchor_top = 0.45200002
-anchor_right = 0.851
-anchor_bottom = 0.675
-offset_left = -183.22803
-offset_top = 34.967995
-offset_right = -73.88202
-offset_bottom = 34.950005
+anchor_left = 0.59900004
+anchor_top = 0.675
+anchor_right = 0.78800005
+anchor_bottom = 0.883
+offset_left = -0.018066406
+offset_top = -2.4960022
+offset_right = 0.58392334
+offset_bottom = 0.005996704
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_tv4lo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")
@@ -329,14 +330,14 @@ text = "RUN"
 [node name="ReverseButton" type="Button" parent="PlayerPanel" unique_id=1085513249]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.601
-anchor_top = 0.45200002
-anchor_right = 0.698
-anchor_bottom = 0.675
-offset_left = -287.38202
-offset_top = 34.967995
-offset_right = -183.03601
-offset_bottom = 34.950005
+anchor_left = 0.358
+anchor_top = 0.66
+anchor_right = 0.54300004
+anchor_bottom = 0.883
+offset_left = -0.15600586
+offset_top = 0.023994446
+offset_right = 0.1739502
+offset_bottom = 0.005996704
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_tv4lo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_snas4")

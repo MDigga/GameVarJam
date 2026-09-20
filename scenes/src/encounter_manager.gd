@@ -18,7 +18,7 @@ func start_battle(creature_id: String, level: int) -> void:
 	return_scene_path = tree.current_scene.scene_file_path
 	return_position = tree.get_first_node_in_group("player").global_position
 
-	await get_tree().create_timer(0.6).timeout   # placeholder for a flash/fade effect
+	await get_tree().create_timer(10).timeout   # placeholder for a flash/fade effect
 	tree.change_scene_to_file("res://scenes/src/battle.tscn")
 
 func end_battle() -> void:
